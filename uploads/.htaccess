@@ -1,0 +1,7 @@
+# Empêche l'exécution de scripts PHP dans le dossier uploads.
+# Même si un fichier malveillant réussissait à passer nos contrôles
+# d'upload et à être déposé ici, Apache refuserait de l'EXÉCUTER —
+# il serait au pire téléchargé tel quel, jamais lancé comme un script.
+<FilesMatch "\.(php|phtml|php3|php4|php5|phar)$">
+    Require all denied
+</FilesMatch>

@@ -1,0 +1,59 @@
+/* ============================================================
+   ADMIN.CSS — Style de l'espace administrateur
+   ============================================================ */
+
+body { background-color: #f4f5f7; font-family: 'Poppins', sans-serif; }
+
+.admin-login-body { background-color: #f4f5f7; }
+
+/* ------------------------------------------------------------
+   Barre du haut (mobile)
+------------------------------------------------------------- */
+.admin-topbar { background-color: #fff; border-bottom: 1px solid #e5e7eb; padding: 0.75rem 1rem; }
+
+/* ------------------------------------------------------------
+   Sidebar
+------------------------------------------------------------- */
+.admin-sidebar { width: 260px; background-color: #1a1a2e; color: #cfd2e0; }
+.admin-sidebar .nav-link {
+    color: #cfd2e0; border-radius: 8px; padding: 0.6rem 0.9rem;
+    margin-bottom: 0.25rem; transition: background-color 0.2s ease;
+}
+.admin-sidebar .nav-link:hover { background-color: rgba(255, 255, 255, 0.08); color: #fff; }
+.admin-sidebar .nav-link.active { background-color: #3d5af1; color: #fff; }
+@media (min-width: 992px) { .admin-sidebar { min-height: 100vh; } }
+
+/* ------------------------------------------------------------
+   Contenu principal
+------------------------------------------------------------- */
+.admin-content { max-width: 100%; }
+
+/* ------------------------------------------------------------
+   Cartes de statistiques
+------------------------------------------------------------- */
+.carte-stat {
+    background-color: #fff; border-radius: 12px; padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); text-align: center;
+}
+.carte-stat i { color: #3d5af1; }
+.carte-stat-chiffre { font-size: 2rem; font-weight: 600; }
+.carte-stat-libelle { color: #6b7280; font-size: 0.9rem; }
+.carte-stat-succes i { color: #16a34a; }
+.carte-stat-danger i { color: #dc2626; }
+.carte-stat-attente i { color: #d97706; }
+
+/* ------------------------------------------------------------
+   Formulaires admin
+------------------------------------------------------------- */
+.carte-formulaire {
+    background-color: #fff; border-radius: 12px; padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); max-width: 800px;
+}
+
+/* ------------------------------------------------------------
+   Galerie admin
+------------------------------------------------------------- */
+.carte-photo { background-color: #fff; border-radius: 10px; padding: 0.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); position: relative; }
+.carte-photo img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+.carte-photo-principale { outline: 2px solid #d97706; }
+.carte-photo-badge { position: absolute; top: 0.75rem; left: 0.75rem; }

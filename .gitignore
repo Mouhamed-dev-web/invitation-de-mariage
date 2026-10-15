@@ -1,0 +1,15 @@
+# Fichiers de configuration sensibles
+config/config.local.php
+
+# Fichiers uploadés par les utilisateurs
+uploads/couples/*
+uploads/galerie/*
+uploads/avatars/*
+!uploads/couples/.gitkeep
+!uploads/galerie/.gitkeep
+!uploads/avatars/.gitkeep
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+*.log

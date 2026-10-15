@@ -1,0 +1,37 @@
+# ============================================================
+# .htaccess racine — URLs propres + sécurité de base
+# ============================================================
+
+# Active le moteur de réécriture d'URL d'Apache
+RewriteEngine On
+
+# --------------------------------------------------------
+# URL propre pour les invitations :
+# /mariage/moussa-fatou  ==>  /mariage/index.php?slug=moussa-fatou
+# --------------------------------------------------------
+# ^mariage/([a-zA-Z0-9-]+)/?$  : capture tout ce qui suit "mariage/"
+# (lettres, chiffres, tirets), avec un / final optionnel
+RewriteRule ^mariage/([a-zA-Z0-9-]+)/?$ mariage/index.php?slug=$1 [L,QSA]
+
+# --------------------------------------------------------
+# Sécurité : on interdit l'accès direct au dossier config/
+# (personne ne doit pouvoir ouvrir config/database.php dans
+# un navigateur, même s'il en devine l'adresse)
+# --------------------------------------------------------
+RewriteRule ^config/ - [F,L]
+
+# --------------------------------------------------------
+# Cache les fichiers sensibles pour tout navigateur
+# --------------------------------------------------------
+<FilesMatch "\.(sql|log|md)$">
+    Require all denied
+</FilesMatch>
+
+# --------------------------------------------------------
+# En-têtes de sécurité de base
+# --------------------------------------------------------
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
